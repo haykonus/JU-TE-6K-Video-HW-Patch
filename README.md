@@ -22,16 +22,47 @@ Die Host-CPU darf nicht asynchron zur Videosignal-Erzeugung durch die Video-CPU 
 - Anhalten des Taktes der Host-CPU während CPU_WAIT aktiv ist
 - Während der H- und V-Austastlücke keine Taktunterbrechung zulassen
 
-Die folgende Grafik zeigt die zeitlichen Verlauf der Signale der Host-CPU für zwei ausgewählte Situationen im Verhältnis zum Timing der Video-CPU. Die Signalbezeichnungen sind den [Plänen von Bert](https://github.com/boert/JU-TE-Computer/tree/main/Tiny_6k) entnommen.
+Die Grafik zeigt die zeitlichen Verlauf der Signale der Host-CPU für zwei ausgewählte Situationen im Verhältnis zum Timing der Video-CPU. Die Signalbezeichnungen sind den [Plänen von Bert](https://github.com/boert/JU-TE-Computer/tree/main/Tiny_6k) entnommen.
 
 ![Video-Timing](/Bilder/Video-Timing.png)
 
 ## Schaltung
-Die folgende Schaltung erzeugt ein CPU_WAIT-Signal nach den o.g. Bedingungen und stoppt den Takt der Host-CPU für wenige Taktperioden, wenn ein Konflikt im Timing zwischen Host- und Video-CPU auftritt.   
+Die Schaltung erzeugt ein CPU_WAIT-Signal nach den o.g. Bedingungen und stoppt den Takt der Host-CPU für wenige Taktperioden, wenn ein Konflikt im Timing zwischen Host- und Video-CPU auftritt.   
 
 ![Schaltplan](/Bilder/Schaltplan.png)
 
-## Messungen
+## Messungen mit Logik-Analysator (24 MS/s)
+Diese Messungen sind mit einem sehr preiswerten Logik-Analysator durchgeführt worden. Die max. Abtastrate beträgt 24 MS/s. Das bedeutet bei 8 MHz keine optimale Auflösung. Daher gibt es z.B. beim Systemtakt eine unsymmetrische Darstellung und manche Impulse haben eine leichte Ungenauigkeit. 
+
+Aber die wesentlichen Abläufe sind sehr gut zu sehen und bestätigen die Annahmen. Damit wird auch deutlich, warum diese Lösung praktisch keine Verluste bei der Rechenzeit der Host-CPU verursacht und damit sehr effektiv ist. 
+
+### 3 Video-Zeilen 
+Das Bild zeigt den zeitlichen Verlauf der Signale für 3 Zeilen. Pro Zeile sind 40 Ladeimpulse für die Videoschieberegister (Y3,S1) zu sehen. In der zweiten und dritten Zeile gibt es jeweils 2 Zugriffe der Host-CPU auf den BWS (CPU_WAIT). Eine echte Taktunterbrechung gab es nur beim ersten Zugriff in Zeile 2. Es lief das Basic-Programm aus dem Demo-Video (s.o.).
+
+![Video-Timing](/Bilder/LA_Timing_Zeile.png)
+
+### Host-CPU-Takt verzögert
+
+Marker 0: Extended Write Zyklus der Host-CPU (T1,T2,TX,T3)
+
+Marker 4: Ladeimpuls der Videoschieberegister
+
+Marker 3: Umschalten der BWS-Adressen auf Host-CPU
+
+![Video-Timing](/Bilder/LA_Timing_verzögert.png)
+
+### Host-CPU-Takt synchron
+
+Marker 1: Extended Write Zyklus der Host-CPU (T1,T2,TX,T3)
+
+Marker 2: Ladeimpuls der Videoschieberegister
+
+Marker 5: Umschalten der BWS-Adressen auf Host-CPU
+
+![Video-Timing](/Bilder/LA_Timing_synchron.png)
+
+## Messungen mit Digital Oszilloskop (1 GS/s)
+
 gelb: CPU_WAIT
 
 blau: XTAL_CPU
