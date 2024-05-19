@@ -71,20 +71,19 @@ blau: XTAL_CPU
 
 Host-CPU-Takt verzögert (Bsp. 1):
 
-![Video-Timing](/Bilder/Timing-verzögert1-500.png)
+![Video-Timing](/Bilder/Timing-verzögert1.png)
 
 <br>
 
 Host-CPU-Takt verzögert (Bsp. 2):
 
-![Video-Timing](/Bilder/Timing-verzögert2-500.png)
+![Video-Timing](/Bilder/Timing-verzögert2.png)
 
 <br>
 
 Host-CPU-Takt synchron:
 
-![Video-Timing](/Bilder/Timing-synchron-500.png)
-
+![Video-Timing](/Bilder/Timing-synchron.png)
 
 ## Quellen
 
