@@ -1,3 +1,4 @@
+[English version](https://github-com.translate.goog/haykonus/JU-TE-6K-Video-HW-Patch?_x_tr_sl=de&_x_tr_tl=en&_x_tr_hl=de&_x_tr_pto=wapp)
 # JU-TE-6K-Video-HW-Patch
 Die hier vorgestellte Schaltung unterdrückt die Störungen im Bildschirm, die durch konkurrierende Zugriffe der Host- und Video-CPU auf den Bildwiederholspeicher entstehen. Die Video-CPU erhält nun Vorrang vor der Host-CPU. Dazu wird das Verfahren "CPU-Takt-Verzögerung" aus dem ZX-Spectrum verwendet, welches im [ULA-Chip](http://www.zxdesign.info/book/) implementiert wurde.
 
