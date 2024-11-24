@@ -32,6 +32,15 @@ Die Schaltung erzeugt ein CPU_WAIT-Signal nach den o.g. Bedingungen und stoppt d
 
 ![Schaltplan](/Bilder/Schaltplan.png)
 
+## Leiterplatte
+
+![Leiterplatte](/Bilder/Leiterplatte.png)
+
+Andreas (Perser), aus dem RT-Forum, hat eine kleine Leiterplatte für diese Schaltung entwickelt. Er hat die Daten zur Verfügung gestellt, sie sind jetzt auch hier abgelegt.
+
+Sprint Layout: [Tiny6kVideo-Entstoer1.lay6](/PCB/Tiny6kVideo-Entstoer1.lay6)
+Gerber-Dateien: [Tiny6kVideo-Entstoer1.zip](/PCB/Tiny6kVideo-Entstoer1.zip)
+
 ## Messungen mit Logik-Analysator (24 MS/s)
 Diese Messungen sind mit einem sehr preiswerten Logik-Analysator durchgeführt worden. Die max. Abtastrate beträgt 24 MS/s. Das bedeutet bei 8 MHz keine optimale Auflösung. Daher gibt es z.B. beim Systemtakt eine unsymmetrische Darstellung und manche Impulse haben eine leichte Ungenauigkeit. 
 
