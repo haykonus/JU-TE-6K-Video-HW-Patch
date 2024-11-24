@@ -36,7 +36,7 @@ Die Schaltung erzeugt ein CPU_WAIT-Signal nach den o.g. Bedingungen und stoppt d
 
 ![Leiterplatte](/Bilder/Leiterplatte.png)
 
-Andreas (Perser), aus dem RT-Forum, hat eine kleine Leiterplatte für diese Schaltung entwickelt. Er hat die Daten zur Verfügung gestellt und sie sind jetzt auch hier abgelegt.
+Andreas (Perser), aus dem [RT-Forum](https://www.robotrontechnik.de/html/forum/thwb/showtopic.php?threadid=22012), hat eine kleine Leiterplatte für diese Schaltung entwickelt. Er hat die Daten zur Verfügung gestellt und sie sind jetzt auch hier abgelegt.
 
 > [!NOTE]
 > Die Links unten anklicken und danach den Download-Button (Download raw file) im Github klicken, um die Datei zu laden.
